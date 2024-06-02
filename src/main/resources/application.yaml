@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-webflux-guide
+  webflux:
+    base-path: /api
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: mongodb://localhost:27017/test
+      database: test
+
+logging:
+  level:
+    pe.joedayz.training.springwebfluxmono: DEBUG
+    org:
+      springframework:
+        web: INFO
+        data:
+          mongodb:
+            core:
+              ReactiveMongoTemplate: DEBUG
+    reactor:
+      netty:
+        http:
+          client: DEBUG

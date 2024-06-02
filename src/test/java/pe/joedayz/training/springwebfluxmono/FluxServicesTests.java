@@ -256,7 +256,7 @@ public class FluxServicesTests {
     // onErrorMap() - Map the error to a different one
     @Test
     void onFluxOnErrorMap(){
-        Flux<String> fruitsFluxOnErrorMap = Flux.just("Apple", "Mango", "Orange")
+        Flux.just("Apple", "Mango", "Orange")
                 .checkpoint("Error Checkpoint1")
                 .map(s -> {
                     if (s.equalsIgnoreCase("Mango"))
@@ -267,7 +267,7 @@ public class FluxServicesTests {
                 .onErrorMap(throwable -> {
                     System.out.println("throwable = " + throwable);
                     return new IllegalStateException("From onError Map");
-                });
+                })
 
         fruitsFluxOnErrorMap
                 .subscribe(s -> {
