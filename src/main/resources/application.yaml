@@ -1,12 +1,11 @@
 spring:
   application:
-    name: spring-webflux-guide
+    name: springwebfluxmono
   webflux:
     base-path: /api
   data:
     mongodb:
-      authentication-database: admin
-      uri: mongodb://localhost:27017/test
+      uri: mongodb://root:example@localhost:27017/test?authSource=admin
       database: test
 
 logging:
