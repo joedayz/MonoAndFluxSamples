@@ -107,7 +107,7 @@ public class FluxServicesTests {
     @Test
     void transformSwitchIfEmpty(){
         Function<Flux<String>,Flux<String>> filterData
-                = data -> data.filter(s -> s.length() > 5);
+                = data -> data.filter(s -> s.length() > 8);
 
         Flux<String> frutas = Flux.fromIterable(List.of("Mango","Orange","Banana"))
                 .transform(filterData)
